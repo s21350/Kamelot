@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Покриття на дах</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230125175017">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<div id="popup" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close"></button>
+					<form data-ajax action="files/sendmail/sendmail.php" method="POST" class="main-form">
+						<input class="form-input" data-validate data-required type="text" name="name" id="name" data-error="Треба заповнити всі поля" placeholder="Імʼя*" class="input-mail">
+						<input class="form-input" data-validate data-required type="number" name="phone" id="phone" data-error="Треба заповнити всі поля" placeholder="Номер телефону*" class="input-phone">
+						<!-- <input data-required type="text" name="form[number]" data-error="Error" placeholder="Код товару"
+					class="input-number"> -->
+						<button type="submit" class="button-form button">Відправити</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div id="popup-catalog" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close"></button>
+					<form data-ajax action="files/sendmail/sendmail.php" method="POST" class="main-form">
+						<input class="form-input" data-validate data-required type="text" name="name" id="name" data-error="Треба заповнити всі поля" placeholder="Імʼя*" class="input-mail">
+						<input class="form-input" data-validate data-required type="number" name="phone" id="phone" data-error="Треба заповнити всі поля" placeholder="Номер телефону*" class="input-phone">
+						<input class="form-input" data-required type="text" name="product" data-error="Треба заповнити всі поля" placeholder="Вкажіть назву товару*" class="input-number">
+						<button type="submit" class="button-form button">Відправити</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<header data-scroll="90" data-scroll-show class="header">
+			<div class="header__container">
+				<div class="header-body">
+					<a href="index.html" class="header-body__logo"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="logo"></picture></a>
+					<div class="header__menu menu">
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="index.html" class="menu__link">Головна</a>
+								</li>
+								<li class="menu__item"><a href="catalog.html" class="menu__link">Каталог товарів</a></li>
+								<li class="menu__item"><a href="contact.html" class="menu__link">Контакти</a></li>
+							</ul>
+							<a class="menu__phone-link _icon-phone" href="tel:+380668150989">(066) 815-09-89</a>
+						</nav>
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+					</div>
+
+				</div>
+			</div>
+		</header>
+		<main class="main-krovlya">
+			<div class="krovlya__container">
+				<marquee behavior="scroll" direction="left">Ціни та асортимент можуть відрізнятися, дізнайтеся деталі за
+					телефоном
+				</marquee>
+				<div class="bread-crumbs">
+					<ul class="bread-crumbs__items">
+						<li class="bread-crumbs__item">
+							<a href="catalog.html" class="bread-crumbs__link">Каталог товарів ></a>
+						</li>
+						<li class="bread-crumbs__item">Покриття на дах</li>
+					</ul>
+				</div>
+				<button type="button" id="open-filter" class="open-filter _icon-filter"></button>
+				<div class="krovlya__body">
+					<div id="krovlya-filter" class="krovlya-filter__wrapper">
+						<form class="krovlya__body-filter filter" id="filter-krovlya">
+							<div data-range class="filter-price">
+								<button id="close-filter__btn" class="close-filter__btn"></button>
+								<h2 class="filter-price__title filter-title">
+									Роздрібна ціна
+								</h2>
+
+								<div class="filter-price__inputs">
+									<input data-range-from="0" autocomplete="off" type="text" value="0" name="minPrice" class="filter-price__input" />
+									<input data-range-to="1500" autocomplete="off" type="text" value="1500" name="maxPrice" class="filter-price__input" />
+								</div>
+								<div data-range-item id="range"></div>
+							</div>
+							<div data-spollers="992" class="filter-material filter">
+								<button data-spoller class="filter-material__title filter-title">
+									Вид
+								</button>
+								<div class="filter-material__inputs">
+									<div class="filter-material__checkbox">
+										<input value="bitum" class="material-checkbox checkbox" type="checkbox" name="bitum" id="bitum" />
+										<label for="bitum">Бітумна черепиця </label>
+									</div>
+									<div class="filter-material__checkbox">
+										<input value="metal" class="material-checkbox checkbox" type="checkbox" name="metal" id="metal" />
+										<label for="metal">Металочерепиця і профнастил
+										</label>
+									</div>
+									<div class="filter-material__checkbox">
+										<input value="komposit" class="material-checkbox checkbox" type="checkbox" name="komposit" id="komposit" />
+										<label for="komposit">Композитна черепиця </label>
+									</div>
+									<div class="filter-material__checkbox">
+										<input class="material-checkbox checkbox" type="checkbox" name="natur" id="natur" value="natur" />
+										<label for="natur">Натуральна черепиця </label>
+									</div>
+									<div class="filter-material__checkbox">
+										<input value="metaplast" class="material-checkbox checkbox checkbox" type="checkbox" name="metaplast" id="metaplast" />
+										<label for="metaplast">Метапласт </label>
+									</div>
+								</div>
+							</div>
+							<div data-spollers="992" class="filter-brand filter">
+								<button data-spoller class="filter-brand__title filter-title">
+									Виробник
+								</button>
+								<div class="filter-brand__inputs">
+									<div class="filter-brand__checkbox">
+										<input class="brand-checkbox checkbox" type="checkbox" name="akvizol" value="akvizol" id="akvizol" />
+										<label for="akvizol">Акваізол </label>
+									</div>
+									<div class="filter-brand__checkbox">
+										<input class="brand-checkbox checkbox" type="checkbox" name="katepal" value="katepal" id="katepal" />
+										<label for="katepal">Katepal
+										</label>
+									</div>
+									<div class="filter-brand__checkbox">
+										<input class="brand-checkbox checkbox" type="checkbox" name="icopal" value="icopal" id="icopal" />
+										<label for="icopal">Ikopal</label>
+									</div>
+									<div class="filter-brand__checkbox">
+										<input class="brand-checkbox checkbox" type="checkbox" name="ico" value="ico" id="ico" />
+										<label for="ico">Ico</label>
+									</div>
+									<div class="filter-brand__checkbox">
+										<input class="brand-checkbox checkbox checkbox" type="checkbox" name="certainteed" value="certainteed" id="certainteed" />
+										<label for="certainteed">CertainTeed</label>
+									</div>
+								</div>
+							</div>
+							<div data-spollers="992" class="filter-color filter">
+								<button data-spoller class="filter-color__title filter-title">
+									Кольорова гамма
+								</button>
+								<div class="filter-color__inputs">
+									<div class="filter-color__checkbox">
+										<input class="color-checkbox checkbox" type="checkbox" name="color" id="red" value="red" />
+
+										<label for="red">Червоний</label>
+									</div>
+									<div class="filter-color__checkbox">
+										<input class="color-checkbox checkbox" type="checkbox" name="color" id="green" value="green" />
+
+										<label for="green">Зелений </label>
+									</div>
+									<div class="filter-color__checkbox">
+										<input class="color-checkbox checkbox" type="checkbox" name="color" id="brown" value="brown" />
+
+										<label for="brown">Коричневий </label>
+									</div>
+									<div class="filter-color__checkbox">
+										<input class="color-checkbox checkbox" type="checkbox" name="color" id="black" value="black" />
+
+										<label for="black">Чорний</label>
+									</div>
+									<div class="filter-color__checkbox">
+										<input class="color-checkbox checkbox" type="checkbox" name="color" id="blue" value="blue" />
+
+										<label for="blue">Синій </label>
+									</div>
+									<div class="filter-color__checkbox">
+										<input class="color-checkbox checkbox" type="checkbox" name="color" id="yellow" value="yellow" />
+
+										<label for="yellow">Жовтий </label>
+									</div>
+								</div>
+							</div>
+							<div class="close-filter" id="close-filter" type="submit" style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 0;
+                  ">
+								<button type="submit" style="
+                      margin: 0 5px;
+                      width: 100%;
+                      background: #f62114;
+                      height: 30px;
+                      border-radius: 6px;
+                      color: #fff;
+                    ">
+									Фільтрувати
+								</button>
+								<button class="clear-filters" type="reset" style="
+                      margin: 0 5px;
+                      width: 100%;
+                      background: #fff;
+                      height: 30px;
+                      border-radius: 6px;
+                      color: #1b1b1b;
+                      border: 1px solid #1b1b1b;
+                    ">
+									Очистити
+								</button>
+							</div>
+						</form>
+					</div>
+
+					<div class="krovlya__body-items"></div>
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__body">
+					<div class="footer__contact">
+						<a href="index.html" class="footer__logo"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="logo"></picture></a>
+						<a target="_blank" href="https://www.google.com/maps/place/%D1%83%D0%BB.+%D0%A1%D1%82%D1%83%D1%81%D0%B0,+8,+%D0%94%D1%80%D0%B0%D0%B3%D0%BE%D0%BC%D0%B8%D1%80%D1%87%D0%B0%D0%BD%D1%8B,+%D0%98%D0%B2%D0%B0%D0%BD%D0%BE-%D0%A4%D1%80%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0,+77454/@48.8843249,24.637574,17z/data=!3m1!4b1!4m5!3m4!1s0x4730c71de20606b7:0x6ce658818671f3cf!8m2!3d48.8843214!4d24.6397627" class="footer__contact-adress _icon-location">с. Драгомирчани,<br>вул. Стуса, 8 </a>
+						<a href="tel:+380988560866" class="footer__contact-phone _icon-phone">098 856-0-866</a>
+						<a href="tel:+380668150989" class="footer__contact-phone _icon-phone">066 815-09-89</a>
+					</div>
+					<div class="footer__menu menu-footer">
+						<div class="menu-footer__column">
+							<ul class="menu-footer__list">
+								<li class="menu-footer__item">
+									<a href="#main" class="menu-footer__link">Головна</a>
+								</li>
+								<li class="menu-footer__item">
+									<a href="catalog.html" class="menu-footer__link">Каталог товарів</a>
+								</li>
+								<li class="menu-footer__item">
+									<a href="contact.html" class="menu-footer__link">Контакти</a>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<!-- Стилі для body -->
+	<style>
+		.lock body {
+			overflow: hidden;
+			touch-action: none;
+			overscroll-behavior: none;
+		}
+
+		.loading body {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.loaded body {
+			transition: opacity 1s ease 0s;
+			opacity: 1;
+			visibility: visible;
+		}
+	</style>
+	<div id="fls-preloader">
+		<!-- Документація: https://template.fls.guru/template-docs/modul-preloader.html -->
+		<!-- Стилі для прелоадера -->
+		<style>
+			* {
+				padding: 0px;
+				margin: 0px;
+				border: 0px;
+			}
+
+			*,
+			*:before,
+			*:after {
+				box-sizing: border-box;
+			}
+
+			/* Головний блок */
+			.fls-preloader {
+				pointer-events: none;
+				z-index: -1;
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			/* Блок з елементами */
+			.fls-preloader__body {
+				padding: 0.93rem;
+				max-width: 31.25rem;
+				display: flex;
+				flex-direction: column;
+			}
+
+			/* Блок з лічильником */
+			.fls-preloader__counter {
+				font-size: 8rem;
+
+			}
+
+			/* Прогресбар */
+			.fls-preloader__line {}
+
+			/* Лінія прогресбару */
+			.fls-preloader__line span {
+				display: inline-block;
+				transition: width 0.2s ease;
+				height: 0.8rem;
+				background-color: #f62114;
+			}
+		</style>
+		<!-- Скріпт прелоадера -->
+		<script>
+			function preloader() {
+				const preloaderImages = document.querySelector('[data-preloader]') ? document.querySelectorAll('[data-preloader] img') : document.querySelectorAll('img');
+				const preloaderContainer = document.querySelector('#fls-preloader');
+				if (preloaderImages.length) {
+					const preloaderTemplate = `
+					<div class="fls-preloader">
+						<div class="fls-preloader__body">
+							<div class="fls-preloader__counter">0%</div>
+							<div class="fls-preloader__line"><span></span></div>
+						</div>
+					</div>`;
+					document.querySelector('html').insertAdjacentHTML("beforeend", preloaderTemplate);
+
+					const
+						preloader = document.querySelector('.fls-preloader'),
+						showPecentLoad = document.querySelector('.fls-preloader__counter'),
+						showLineLoad = document.querySelector('.fls-preloader__line span'),
+						htmlDocument = document.documentElement;
+
+					let imagesLoadedCount = counter = progress = 0;
+
+					htmlDocument.classList.add('loading');
+					htmlDocument.classList.add('lock');
+
+					preloaderImages.forEach(preloaderImage => {
+						const imgClone = document.createElement('img');
+						if (imgClone) {
+							imgClone.onload = imageLoaded;
+							imgClone.onerror = imageLoaded;
+							preloaderImage.dataset.src ? imgClone.src = preloaderImage.dataset.src : imgClone.src = preloaderImage.src;
+						}
+					});
+
+					function setValueProgress(progress) {
+						showPecentLoad ? showPecentLoad.innerText = `${progress}%` : null;
+						showLineLoad ? showLineLoad.style.width = `${progress}%` : null;
+					}
+					showPecentLoad ? setValueProgress(progress) : null;
+
+					function imageLoaded() {
+						imagesLoadedCount++;
+						progress = Math.round((100 / preloaderImages.length) * imagesLoadedCount);
+						const intervalId = setInterval(() => {
+							counter >= progress ? clearInterval(intervalId) : setValueProgress(++counter);
+							counter >= 100 ? addLoadedClass() : null;
+						}, 10);
+					}
+
+					function addLoadedClass() {
+						htmlDocument.classList.add('loaded');
+						htmlDocument.classList.remove('lock');
+						htmlDocument.classList.remove('loading');
+						setInterval(() => {
+							preloader.remove();
+							preloaderContainer.remove();
+						}, 500);
+					}
+				} else {
+					preloaderContainer.remove();
+				}
+			}
+			preloader();
+		</script>
+	</div>
+	<script src="js/app.min.js?_v=20230125175017"></script>
+</body>
+
+</html>

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Камелот</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230125175017">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<div id="popup" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close"></button>
+					<form data-ajax action="files/sendmail/sendmail.php" method="POST" class="main-form">
+						<input class="form-input" data-validate data-required type="text" name="name" id="name" data-error="Треба заповнити всі поля" placeholder="Імʼя*" class="input-mail">
+						<input class="form-input" data-validate data-required type="number" name="phone" id="phone" data-error="Треба заповнити всі поля" placeholder="Номер телефону*" class="input-phone">
+						<!-- <input data-required type="text" name="form[number]" data-error="Error" placeholder="Код товару"
+					class="input-number"> -->
+						<button type="submit" class="button-form button">Відправити</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div id="popup-catalog" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close"></button>
+					<form data-ajax action="files/sendmail/sendmail.php" method="POST" class="main-form">
+						<input class="form-input" data-validate data-required type="text" name="name" id="name" data-error="Треба заповнити всі поля" placeholder="Імʼя*" class="input-mail">
+						<input class="form-input" data-validate data-required type="number" name="phone" id="phone" data-error="Треба заповнити всі поля" placeholder="Номер телефону*" class="input-phone">
+						<input class="form-input" data-required type="text" name="product" data-error="Треба заповнити всі поля" placeholder="Вкажіть назву товару*" class="input-number">
+						<button type="submit" class="button-form button">Відправити</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<header data-scroll="90" data-scroll-show class="header">
+			<div class="header__container">
+				<div class="header-body">
+					<a href="index.html" class="header-body__logo"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="logo"></picture></a>
+					<div class="header__menu menu">
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="index.html" class="menu__link">Головна</a>
+								</li>
+								<li class="menu__item"><a href="catalog.html" class="menu__link">Каталог товарів</a></li>
+								<li class="menu__item"><a href="contact.html" class="menu__link">Контакти</a></li>
+							</ul>
+							<a class="menu__phone-link _icon-phone" href="tel:+380668150989">(066) 815-09-89</a>
+						</nav>
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+					</div>
+
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section id="main" class="main">
+				<div class="main__container">
+					<div class="main__content">
+						<h1 class="main__content-title"><span>Отримай свою персональну знижку.</span><br>
+							Зв’яжіться з нами і ми підберемо найкращу ціну для Вас
+						</h1>
+						<button data-popup="#popup" class="main__content-button button">Зателефонувати
+						</button>
+					</div>
+				</div>
+			</section>
+			<!-- <section class="about-us">
+
+				<div class="about-us__container">
+					<div class="about-us__body">
+						<div class="about-us__image-block img">
+							<picture><source srcset="img/logo2.webp" type="image/webp"><img class="about-us__logo-img" src="img/logo2.png" alt=""></picture>
+							<div class="img__column-left">
+								<div class="img__top-left"></div>
+								<div class="img__bottom-left"></div>
+							</div>
+							<div class="img__column-right">
+								<div class="img__top-right"></div>
+								<div class="img__bottom-right"></div>
+							</div>
+						</div>
+						<div class="about-us__content-block">
+							<h2 class="about-us__title title">Про нас</h2>
+							<h2 class="about-us__sub-title sub-title">Lorem ipsum dolor sit amet.</h2>
+							<div class="about-us__text">
+								Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, aperiam quos tempora
+								soluta
+								dolorum inventore optio eos velit neque omnis provident impedit. Aut consectetur saepe ducimus
+								nemo
+								aliquid optio repellat.
+							</div>
+							<div class="about-us__progress">
+								<ul class="about-us__list">
+									<li class="about-us__list-item">1. Lorem ipsum dolor sit.</li>
+									<li class="about-us__list-item">2. Lorem ipsum dolor sit.</li>
+									<li class="about-us__list-item">3. Lorem ipsum dolor sit.</li>
+									<li class="about-us__list-item">4. Lorem ipsum dolor sit.</li>
+								</ul>
+								<div class="about-us__img">
+									<picture><source srcset="img/img01.webp" type="image/webp"><img src="img/img01.jpeg" alt="img"></picture>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</section> -->
+			<section class="progress">
+				<div class="progress__container">
+					<div class="progress__body">
+						<div class="progress__card">
+							<picture><source srcset="img/icon2.webp" type="image/webp"><img src="img/icon2.png" alt="icon"></picture>
+							<div class="progress__content">
+								<div data-watch data-watch-once class="progress__number">
+									<span data-digits-counter class="progress__num">20 років</span>
+									<span class="progress__icon">років</span>
+								</div>
+								<span class="progress__text">На ринку буд матеріалів</span>
+							</div>
+						</div>
+						<div class="progress__card">
+							<picture><source srcset="img/experience.webp" type="image/webp"><img src="img/experience.png" alt="icon"></picture>
+							<div class="progress__content">
+								<div data-watch data-watch-once class="progress__number">
+									<span data-digits-counter class="progress__num">30000</span>
+									<span class="progress__icon">+</span>
+								</div>
+								<span class="progress__text">Задоволених клієнтів
+
+								</span>
+							</div>
+						</div>
+						<div class="progress__card">
+							<picture><source srcset="img/certificate.webp" type="image/webp"><img src="img/certificate.png" alt="icon"></picture>
+							<div class="progress__content">
+								<div data-watch data-watch-once class="progress__number">
+									<span>До</span><span data-digits-counter class="progress__num"> 50
+									</span>
+									<span class="progress__icon">років</span>
+								</div>
+								<span class="progress__text">Гарантії</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="service">
+				<div class="service__container">
+					<h2 class="service__title title">Наші послуги</h2>
+					<h2 class="service__sub-title sub-title">мають широкий спектр</h2>
+					<div class="service__card-block">
+						<div class="service-card">
+							<div class="service-card__line-top"></div>
+							<div class="service-card__line-bottom"></div>
+							<div class="service-card__line-left"></div>
+							<div class="service-card__line-right"></div>
+							<div class="service-card__icon">
+								<picture><source srcset="img/shopping-cart.webp" type="image/webp"><img src="img/shopping-cart.png" alt="icon"></picture>
+							</div>
+							<h3 class="service-card__title">Роздрібна торгівля</h3>
+							<div class="service-card__text">Все що потрібно для приватного будинку та подвір’я можна
+								переглянути тут </div>
+							<a href="catalog.html" class="service-card__button button">До каталогу</a>
+						</div>
+						<div class="service-card">
+							<div class="service-card__line-top"></div>
+							<div class="service-card__line-bottom"></div>
+							<div class="service-card__line-left"></div>
+							<div class="service-card__line-right"></div>
+							<div class="service-card__icon">
+								<picture><source srcset="img/wholesale.webp" type="image/webp"><img src="img/wholesale.png" alt="icon"></picture>
+							</div>
+							<h3 class="service-card__title">Гуртова торгівля</h3>
+							<div class="service-card__text">Для співпраці з гуртовими клієнтами та майстрами доступні всі
+								товари, що зазначені у каталозі та навіть більше.</div>
+							<a href="tel:0668150989 " class="service-card__button button">Зателефонувати</a>
+						</div>
+						<div class="service-card">
+							<div class="service-card__line-top"></div>
+							<div class="service-card__line-bottom"></div>
+							<div class="service-card__line-left"></div>
+							<div class="service-card__line-right"></div>
+							<div class="service-card__icon">
+								<picture><source srcset="img/factory.webp" type="image/webp"><img src="img/factory.png" alt="icon"></picture>
+							</div>
+							<h3 class="service-card__title">Власне виробництво </h3>
+							<div class="service-card__text">Огорожі з ламелей та сухопресована цегла, що складається в замок
+								доступна у роздріб та гуртом.</div>
+							<a href="tel:0668150989 " class="service-card__button button">Зателефонувати</a>
+						</div>
+						<div class="service-card">
+							<div class="service-card__line-top"></div>
+							<div class="service-card__line-bottom"></div>
+							<div class="service-card__line-left"></div>
+							<div class="service-card__line-right"></div>
+							<div class="service-card__icon">
+								<picture><source srcset="img/builder.webp" type="image/webp"><img src="img/builder.png" alt="icon"></picture>
+							</div>
+							<h3 class="service-card__title">Бригада майстрів</h3>
+							<div class="service-card__text">Допоможуть в монтуванні будь-яких товарів з нашого каталогу </div>
+							<button data-popup="#popup" class="service-card__button button">Зателефонувати</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="why-us">
+				<div class="why-us__container">
+					<div class="why-us__body">
+						<div class="why-us__content">
+							<h2 class="why-us__title title">Чому обирають нас</h2>
+							<h2 class="why-us__sub-title sub-title">наші клієнти протягом всього часу</h2>
+							<div class="why-us__wrapper-content">
+								<div class="why-us__benefits our-benefits">
+									<div class="our-benefits__body">
+										<div class="our-benefits__mark _icon-arrow"></div>
+										<div class="our-benefits__content benefits-content">
+											<div class="benefits-content__title">Виробники з усього світу в одному місці
+											</div>
+										</div>
+									</div>
+									<div class="our-benefits__body">
+										<div class="our-benefits__mark _icon-arrow"></div>
+										<div class="our-benefits__content benefits-content">
+											<div class="benefits-content__title">Широкий асортимент кожного виду
+											</div>
+										</div>
+									</div>
+									<div class="our-benefits__body">
+										<div class="our-benefits__mark _icon-arrow"></div>
+										<div class="our-benefits__content benefits-content">
+											<div class="benefits-content__title">Працюємо тільки з компаніями, перевіреними часом
+											</div>
+
+										</div>
+									</div>
+								</div>
+								<div class="why-us__benefits our-benefits">
+									<div class="our-benefits__body">
+										<div class="our-benefits__mark _icon-arrow"></div>
+										<div class="our-benefits__content benefits-content">
+											<div class="benefits-content__title">Єдині представники Євротону, Акваізолу та Керамеї
+											</div>
+
+										</div>
+									</div>
+									<div class="our-benefits__body">
+										<div class="our-benefits__mark _icon-arrow"></div>
+										<div class="our-benefits__content benefits-content">
+											<div class="benefits-content__title">Індивідуальні знижки
+											</div>
+
+										</div>
+									</div>
+									<div class="our-benefits__body">
+										<div class="our-benefits__mark _icon-arrow"></div>
+										<div class="our-benefits__content benefits-content">
+											<div class="benefits-content__title">Знижки для ЗСУ представників
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+			</section>
+			<section class="our-projects">
+				<div class="our-projects__container">
+					<h2 class="our-projects__title title">Проєкти</h2>
+					<h2 class="our-projects__sub-title sub-title">Наших клієнтів</h2>
+					<div class="our-projects__slider our-projects__swiper">
+						<!-- Частина слайдера, що рухається -->
+						<div class="our-projects__wrapper swiper-wrapper">
+							<!-- Слайд -->
+							<div class="our-projects__slide swiper-slide">
+								<div class="our-projects__image-ibg"><picture><source srcset="img/project/project1.webp" type="image/webp"><img src="img/project/project1.jpg" alt=""></picture></div>
+								<div class="our-projects__slide-content">
+									<!-- <h2 class="our-projects__slide-content-title">
+										Lorem ipsum dolor sit.
+									</h2>
+									<div class="our-projects__slide-content-description">Lorem ipsum dolor sit amet consectetur
+										adipisicing elit. Eveniet, ratione.</div> -->
+								</div>
+							</div>
+							<div class="our-projects__slide swiper-slide">
+								<div class="our-projects__image-ibg"><picture><source srcset="img/project/project2.webp" type="image/webp"><img src="img/project/project2.jpg" alt=""></picture></div>
+								<div class="our-projects__slide-content">
+									<!-- <h2 class="our-projects__slide-content-title">
+										Lorem ipsum dolor sit.
+									</h2>
+									<div class="our-projects__slide-content-description">Lorem ipsum dolor sit amet consectetur
+										adipisicing elit. Eveniet, ratione.</div> -->
+								</div>
+							</div>
+							<div class="our-projects__slide swiper-slide">
+								<div class="our-projects__image-ibg"><picture><source srcset="img/project/project3.webp" type="image/webp"><img src="img/project/project3.jpg" alt=""></picture></div>
+								<div class="our-projects__slide-content">
+									<!-- <h2 class="our-projects__slide-content-title">
+										Lorem ipsum dolor sit.
+									</h2>
+									<div class="our-projects__slide-content-description">Lorem ipsum dolor sit amet consectetur
+										adipisicing elit. Eveniet, ratione.</div> -->
+								</div>
+							</div>
+							<div class="our-projects__slide swiper-slide">
+								<div class="our-projects__image-ibg"><picture><source srcset="img/project/project4.webp" type="image/webp"><img src="img/project/project4.jpg" alt=""></picture></div>
+								<div class="our-projects__slide-content">
+									<!-- <h2 class="our-projects__slide-content-title">
+										Lorem ipsum dolor sit.
+									</h2>
+									<div class="our-projects__slide-content-description">Lorem ipsum dolor sit amet consectetur
+										adipisicing elit. Eveniet, ratione.</div> -->
+								</div>
+							</div>
+							<div class="our-projects__slide swiper-slide">
+								<div class="our-projects__image-ibg"><picture><source srcset="img/project/project5.webp" type="image/webp"><img src="img/project/project5.jpg" alt=""></picture></div>
+								<div class="our-projects__slide-content">
+									<!-- <h2 class="our-projects__slide-content-title">
+										Lorem ipsum dolor sit.
+									</h2>
+									<div class="our-projects__slide-content-description">Lorem ipsum dolor sit amet consectetur
+										adipisicing elit. Eveniet, ratione.</div> -->
+								</div>
+							</div>
+							<div class="our-projects__slide swiper-slide">
+								<div class="our-projects__image-ibg"><picture><source srcset="img/project/project6.webp" type="image/webp"><img src="img/project/project6.jpg" alt=""></picture></div>
+								<div class="our-projects__slide-content">
+									<!-- <h2 class="our-projects__slide-content-title">
+										Lorem ipsum dolor sit.
+									</h2>
+									<div class="our-projects__slide-content-description">Lorem ipsum dolor sit amet consectetur
+										adipisicing elit. Eveniet, ratione.</div> -->
+								</div>
+							</div>
+							<div class="our-projects__slide swiper-slide">
+								<div class="our-projects__image-ibg"><picture><source srcset="img/project/project7.webp" type="image/webp"><img src="img/project/project7.jpg" alt=""></picture></div>
+								<div class="our-projects__slide-content">
+									<!-- <h2 class="our-projects__slide-content-title">
+										Lorem ipsum dolor sit.
+									</h2>
+									<div class="our-projects__slide-content-description">Lorem ipsum dolor sit amet consectetur
+										adipisicing elit. Eveniet, ratione.</div> -->
+								</div>
+							</div>
+							<div class="our-projects__slide swiper-slide">
+								<div class="our-projects__image-ibg"><picture><source srcset="img/project/project8.webp" type="image/webp"><img src="img/project/project8.jpg" alt=""></picture></div>
+								<div class="our-projects__slide-content">
+									<!-- <h2 class="our-projects__slide-content-title">
+										Lorem ipsum dolor sit.
+									</h2>
+									<div class="our-projects__slide-content-description">Lorem ipsum dolor sit amet consectetur
+										adipisicing elit. Eveniet, ratione.</div> -->
+								</div>
+							</div>
+							<div class="our-projects__slide swiper-slide">
+								<div class="our-projects__image-ibg"><picture><source srcset="img/project/project9.webp" type="image/webp"><img src="img/project/project9.jpg" alt=""></picture></div>
+								<div class="our-projects__slide-content">
+									<!-- <h2 class="our-projects__slide-content-title">
+										Lorem ipsum dolor sit.
+									</h2>
+									<div class="our-projects__slide-content-description">Lorem ipsum dolor sit amet consectetur
+										adipisicing elit. Eveniet, ratione.</div> -->
+								</div>
+							</div>
+						</div>
+						<!-- Якщо потрібна пагінація -->
+						<div class="swiper-pagination"></div>
+						<!-- Якщо потрібна навігація (ліворуч/праворуч) -->
+						<button type="button" class="swiper-button__our-project swiper-button-prev _icon-arrow"></button>
+						<button type="button" class="swiper-button__our-project swiper-button-next _icon-arrow"></button>
+						<!-- </div> -->
+					</div>
+			</section>
+			<section class="form">
+				<div class="form__container">
+					<div class="form__content">
+						<h2 class="form__title title">Зв’яжіться з нами
+						</h2>
+						<!-- <h2 class="form__sub-title sub-title">Lorem ipsum dolor sit amet.</h2> -->
+						<div class="form__text">Ми допоможемо підібрати товар, що повністю підлягає вашим потребам, та дамо
+							персональну знижку
+						</div>
+					</div>
+					<div class="form__wrapper">
+						<form data-ajax action="files/sendmail/sendmail.php" method="POST" class="main-form">
+							<input class="form-input" data-validate data-required type="text" name="name" id="name" data-error="Треба заповнити всі поля" placeholder="Імʼя*" class="input-mail">
+							<input class="form-input" data-validate data-required type="number" name="phone" id="phone" data-error="Треба заповнити всі поля" placeholder="Номер телефону*" class="input-phone">
+							<!-- <input data-required type="text" name="form[number]" data-error="Error" placeholder="Код товару"
+								class="input-number"> -->
+							<button type="submit" class="button-form button">Відправити</button>
+						</form>
+					</div>
+
+				</div>
+			</section>
+			<section class="reviews">
+				<div class="reviews__container">
+					<div class="reviews__body">
+						<h2 class="reviews__title title">Відгуки</h2>
+						<h2 class="reviews__sub-title sub-title">Наших клієнтів</h2>
+						<!-- Оболонка слайдера -->
+						<div class="reviews__slider reviews__swiper">
+							<!-- Частина слайдера, що рухається -->
+							<div class="reviews__wrapper swiper-wrapper">
+								<!-- Слайд -->
+								<div class="reviews__slide swiper-slide">
+									<img class="swiper-slide__img" src="img/quotes.svg" alt="quotes">
+									<div class="swiper-slide__text">Вибирали матеріал для паркану, персонал різні варіанти
+										порахував, порівняв, порадили, що найкраще для нас. Вибором задоволені!
+									</div>
+								</div>
+								<div class="reviews__slide swiper-slide">
+									<img class="swiper-slide__img" src="img/quotes.svg" alt="quotes">
+									<div class="swiper-slide__text">Великий асортимент! Знайшли товари, які ні в яких магазинах
+										раніше не бачили
+									</div>
+								</div>
+								<div class="reviews__slide swiper-slide">
+									<img class="swiper-slide__img" src="img/quotes.svg" alt="quotes">
+									<div class="swiper-slide__text">Купили цеглу на паркан чевроного кольору, але зрозуміли що
+										колір не підходить. В Камелоті без проблем поміняли на іншу
+									</div>
+								</div>
+								<div class="reviews__slide swiper-slide">
+									<img class="swiper-slide__img" src="img/quotes.svg" alt="quotes">
+									<div class="swiper-slide__text">Хочу подякувати за роботу працівників. Приємне спілкування,
+										досвідчені спеціалісти
+									</div>
+								</div>
+								<div class="reviews__slide swiper-slide">
+									<img class="swiper-slide__img" src="img/quotes.svg" alt="quotes">
+									<div class="swiper-slide__text">Дуже оперативно! Спішив закінчити ремонт до свят, вже не
+										сподівався встигнути, але в Камелоті частину товару дали з складу, іншу доставили за 2 дні
+									</div>
+								</div>
+								<div class="reviews__slide swiper-slide">
+									<img class="swiper-slide__img" src="img/quotes.svg" alt="quotes">
+									<div class="swiper-slide__text">Робітники допомагли з транспортом, загрузкою та розгрузкою
+										бруківки
+									</div>
+								</div>
+							</div>
+							<!-- Якщо потрібна пагінація -->
+							<div class="swiper-pagination"></div>
+							<!-- Якщо потрібна навігація (ліворуч/праворуч) -->
+							<button type="button" class="swiper-button-prev"></button>
+							<button type="button" class="swiper-button-next"></button>
+							<!-- Якщо потрібен скролбар -->
+							<div class="swiper-scrollbar"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__body">
+					<div class="footer__contact">
+						<a href="index.html" class="footer__logo"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="logo"></picture></a>
+						<a target="_blank" href="https://www.google.com/maps/place/%D1%83%D0%BB.+%D0%A1%D1%82%D1%83%D1%81%D0%B0,+8,+%D0%94%D1%80%D0%B0%D0%B3%D0%BE%D0%BC%D0%B8%D1%80%D1%87%D0%B0%D0%BD%D1%8B,+%D0%98%D0%B2%D0%B0%D0%BD%D0%BE-%D0%A4%D1%80%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0,+77454/@48.8843249,24.637574,17z/data=!3m1!4b1!4m5!3m4!1s0x4730c71de20606b7:0x6ce658818671f3cf!8m2!3d48.8843214!4d24.6397627" class="footer__contact-adress _icon-location">с. Драгомирчани,<br>вул. Стуса, 8 </a>
+						<a href="tel:+380988560866" class="footer__contact-phone _icon-phone">098 856-0-866</a>
+						<a href="tel:+380668150989" class="footer__contact-phone _icon-phone">066 815-09-89</a>
+					</div>
+					<div class="footer__menu menu-footer">
+						<div class="menu-footer__column">
+							<ul class="menu-footer__list">
+								<li class="menu-footer__item">
+									<a href="#main" class="menu-footer__link">Головна</a>
+								</li>
+								<li class="menu-footer__item">
+									<a href="catalog.html" class="menu-footer__link">Каталог товарів</a>
+								</li>
+								<li class="menu-footer__item">
+									<a href="contact.html" class="menu-footer__link">Контакти</a>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<!-- Стилі для body -->
+	<style>
+		.lock body {
+			overflow: hidden;
+			touch-action: none;
+			overscroll-behavior: none;
+		}
+
+		.loading body {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.loaded body {
+			transition: opacity 1s ease 0s;
+			opacity: 1;
+			visibility: visible;
+		}
+	</style>
+	<div id="fls-preloader">
+		<!-- Документація: https://template.fls.guru/template-docs/modul-preloader.html -->
+		<!-- Стилі для прелоадера -->
+		<style>
+			* {
+				padding: 0px;
+				margin: 0px;
+				border: 0px;
+			}
+
+			*,
+			*:before,
+			*:after {
+				box-sizing: border-box;
+			}
+
+			/* Головний блок */
+			.fls-preloader {
+				pointer-events: none;
+				z-index: -1;
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			/* Блок з елементами */
+			.fls-preloader__body {
+				padding: 0.93rem;
+				max-width: 31.25rem;
+				display: flex;
+				flex-direction: column;
+			}
+
+			/* Блок з лічильником */
+			.fls-preloader__counter {
+				font-size: 8rem;
+
+			}
+
+			/* Прогресбар */
+			.fls-preloader__line {}
+
+			/* Лінія прогресбару */
+			.fls-preloader__line span {
+				display: inline-block;
+				transition: width 0.2s ease;
+				height: 0.8rem;
+				background-color: #f62114;
+			}
+		</style>
+		<!-- Скріпт прелоадера -->
+		<script>
+			function preloader() {
+				const preloaderImages = document.querySelector('[data-preloader]') ? document.querySelectorAll('[data-preloader] img') : document.querySelectorAll('img');
+				const preloaderContainer = document.querySelector('#fls-preloader');
+				if (preloaderImages.length) {
+					const preloaderTemplate = `
+					<div class="fls-preloader">
+						<div class="fls-preloader__body">
+							<div class="fls-preloader__counter">0%</div>
+							<div class="fls-preloader__line"><span></span></div>
+						</div>
+					</div>`;
+					document.querySelector('html').insertAdjacentHTML("beforeend", preloaderTemplate);
+
+					const
+						preloader = document.querySelector('.fls-preloader'),
+						showPecentLoad = document.querySelector('.fls-preloader__counter'),
+						showLineLoad = document.querySelector('.fls-preloader__line span'),
+						htmlDocument = document.documentElement;
+
+					let imagesLoadedCount = counter = progress = 0;
+
+					htmlDocument.classList.add('loading');
+					htmlDocument.classList.add('lock');
+
+					preloaderImages.forEach(preloaderImage => {
+						const imgClone = document.createElement('img');
+						if (imgClone) {
+							imgClone.onload = imageLoaded;
+							imgClone.onerror = imageLoaded;
+							preloaderImage.dataset.src ? imgClone.src = preloaderImage.dataset.src : imgClone.src = preloaderImage.src;
+						}
+					});
+
+					function setValueProgress(progress) {
+						showPecentLoad ? showPecentLoad.innerText = `${progress}%` : null;
+						showLineLoad ? showLineLoad.style.width = `${progress}%` : null;
+					}
+					showPecentLoad ? setValueProgress(progress) : null;
+
+					function imageLoaded() {
+						imagesLoadedCount++;
+						progress = Math.round((100 / preloaderImages.length) * imagesLoadedCount);
+						const intervalId = setInterval(() => {
+							counter >= progress ? clearInterval(intervalId) : setValueProgress(++counter);
+							counter >= 100 ? addLoadedClass() : null;
+						}, 10);
+					}
+
+					function addLoadedClass() {
+						htmlDocument.classList.add('loaded');
+						htmlDocument.classList.remove('lock');
+						htmlDocument.classList.remove('loading');
+						setInterval(() => {
+							preloader.remove();
+							preloaderContainer.remove();
+						}, 500);
+					}
+				} else {
+					preloaderContainer.remove();
+				}
+			}
+			preloader();
+		</script>
+	</div>
+	<script src="js/app.min.js?_v=20230125175017"></script>
+</body>
+
+</html>
